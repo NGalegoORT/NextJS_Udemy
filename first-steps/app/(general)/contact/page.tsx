@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 const ContactPage = () => {
   return (
-    <div>ContactPage</div>
+    <main className="flex flex-col items-center p-24">ContactPage</main>
   )
 }
 

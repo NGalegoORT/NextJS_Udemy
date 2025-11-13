@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 const PricingPage = () => {
   return (
-    <div>PricingPage</div>
+    <main className="flex flex-col items-center p-24">PricingPage</main>
   )
 }
 
