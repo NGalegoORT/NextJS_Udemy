@@ -1,3 +1,6 @@
+import Image from 'next/image'
+
+
 const Sidebar = () => {
   return (
         <div id="menu" 
@@ -13,7 +16,13 @@ const Sidebar = () => {
             <p className="text-slate-500">Welcome back,</p>
             <a href="#" className="inline-flex space-x-2 items-center">
               <span>
-                <img className="rounded-full w-8 h-8" src="https://media.licdn.com/dms/image/v2/D4D03AQE_3tJpZNOD9A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1664393951547?e=2147483647&v=beta&t=8mFgyF43Dpzn6f-xHgqhWEjs1a22LJbaA_SAC3I5U0E" alt="" />
+                <Image
+                className="rounded-full w-8 h-8"
+                src="https://media.licdn.com/dms/image/v2/D4D03AQE_3tJpZNOD9A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1664393951547?e=2147483647&v=beta&t=8mFgyF43Dpzn6f-xHgqhWEjs1a22LJbaA_SAC3I5U0E"
+                width={50}
+                height={50}
+                alt="Users Avatar"
+                />
               </span>
               <span className="text-sm md:text-base font-bold">
                 Nahuel Galego
