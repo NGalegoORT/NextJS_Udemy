@@ -9,7 +9,7 @@ const navItems = [
 const Navbar = () => {
   
     return (
-    <nav className="flex bg-blue-700 bg-opacity-30 p-2 m-2 rounded">
+    <nav className="flex bg-green-900 bg-opacity-30 p-2 m-2 rounded">
     
     <Link href={'/'}><span>Home</span></Link>
     <div className="flex flex-1"></div>
