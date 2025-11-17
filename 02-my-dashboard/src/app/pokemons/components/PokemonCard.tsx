@@ -37,8 +37,8 @@ export const PokemonCard = ({pokemon}:Props) => {
                                 <svg
                                     fill="none"
                                     stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
                                     viewBox="0 0 24 24"
                                     className="w-5 h-5"
                                 >
