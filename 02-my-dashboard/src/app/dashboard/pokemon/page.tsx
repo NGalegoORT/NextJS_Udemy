@@ -1,12 +1,20 @@
+const getPokemonData = async (limit = 20, offset = 0) => {
+  const data = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`)
+  .then( res => res.json());
 
-const PokemonPage = () => {
+  return data;
+}
+
+export default async function PokemonPage() {
+
+  const pokemons = await getPokemonData();
   return (
     <>
     <div className="flex flex-col items-center justify-center w-full h-full">
-      <span>Pokemon Page</span>
+      <span>
+        {JSON.stringify(pokemons)}
+      </span>
     </div>
     </>
   )
 }
-
-export default PokemonPage
