@@ -19,7 +19,7 @@ const menuItems = [
     title: 'Counter',
     subTitle: 'Estado Local'
   },
-  {path:'/dashboard/pokemon',
+  {path:'/dashboard/pokemons',
     icon: <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

@@ -1,4 +1,4 @@
-import { PokemonGrid, PokemonsResponse, SimplePokemon } from "@/app/pokemons";
+import { PokemonGrid, PokemonsResponse, SimplePokemon } from "@/pokemons";
 import Image from "next/image";
 
 const getPokemonData = async (limit = 20, offset = 0):Promise <SimplePokemon[]> => {
@@ -17,7 +17,7 @@ const getPokemonData = async (limit = 20, offset = 0):Promise <SimplePokemon[]> 
 
 export default async function PokemonPage() {
 
-  const pokemons = await getPokemonData(21);
+  const pokemons = await getPokemonData(10);
   return (
     <>
     <div className="flex flex-col">
