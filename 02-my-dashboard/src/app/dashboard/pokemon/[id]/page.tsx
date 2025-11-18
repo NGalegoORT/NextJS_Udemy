@@ -1,6 +1,7 @@
 import { Pokemon } from "@/pokemons";
 import { Metadata } from "next";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 interface Props {
     params: Promise<{ id: string }>;
@@ -34,6 +35,7 @@ const getPokemon = async (id: string): Promise<Pokemon> => {
 export default async function PokemonPage({ params }: Props) {
     const { id } = await params;
 
+        try{
   const pokemon = await getPokemon(id);
   
 
@@ -133,6 +135,10 @@ export default async function PokemonPage({ params }: Props) {
       </div>
     </div>
   );
+  }catch{
+    notFound()
+
+  }
 }
 
 
