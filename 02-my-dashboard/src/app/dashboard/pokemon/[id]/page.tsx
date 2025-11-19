@@ -8,6 +8,18 @@ interface Props {
     params: Promise<{ id: string }>;
 }
 
+
+export async function generateStaticParams (){
+
+  //GENERACION ESTATICA DE LAS PAGINAS QUE VAMOS A USAR EN LOS PRIMEROS 151 POKEPIBES
+
+  const static151Pokemons = Array.from({length:151}).map((v,i) => `${i+1}`)
+  
+  return static151Pokemons.map( id => ({
+    id: id
+  }))
+};
+
 export async function generateMetadata({params}: Props):Promise<Metadata>{
         const { id } = await params;
         const pokemon = await getPokemon(id);
