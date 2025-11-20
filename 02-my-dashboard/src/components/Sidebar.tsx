@@ -36,8 +36,25 @@ const menuItems = [
           </svg>,
     title: 'Pokemon',
     subTitle: 'Aqui estan todos los pokemon'
+  },
+  {path:'/dashboard/favorites',
+    icon: <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            className="w-6 h-6"
+            >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 21C12 21 5 14 5 9C5 6.24 7.24 4 10 4C11.74 4 13 5.24 13 5.24C13 5.24 14.26 4 16 4C18.76 4 21 6.24 21 9C21 14 12 21 12 21Z"
+            />
+          </svg>,
+    title: 'Favoritos',
+    subTitle: 'Listado de Pokemon Favoritos'
   }
-
 ];
 
 

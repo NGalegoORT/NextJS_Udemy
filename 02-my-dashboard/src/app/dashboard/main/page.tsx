@@ -1,9 +1,24 @@
+import { SimpleWidget } from "@/components/SimpleWidget"
+
 const LandingPage = () => {
   return (
     <>
-    <div className="flex flex-col items-center justify-center w-full h-full">
-      <h1>Landing Page</h1>
-    </div>
+      <div className="text-black p-2">
+        <h1 className="mt-2 text-3xl">Dashboard</h1>
+        <span className="text-xl">Informacion General</span>
+
+        <div className="flex felx-wrap p-2 item-center justify-center">
+        <SimpleWidget/>
+        
+        
+
+        </div>
+
+      </div>
+
+
+
+
     </>  )
 }
 
