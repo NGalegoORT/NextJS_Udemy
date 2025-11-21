@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import SideBarMenuItems from './SideBarMenuItems'
+import SideBarMenuItems from './SideBarMenuItems';
 import path from 'path';
 
 const menuItems = [
