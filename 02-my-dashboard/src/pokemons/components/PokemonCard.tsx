@@ -1,6 +1,10 @@
+'use client'
+
 import Link from "next/link"
 import Image from "next/image";
 import { SimplePokemon } from "../interfaces/simple-pokemon"
+import { useAppDispatch, useAppSelector } from "@/store";
+import { toggleFavorite } from "@/store/pokemons/pokemons";
 
 interface Props{
     pokemon: SimplePokemon;
@@ -8,6 +12,14 @@ interface Props{
 
 
 export const PokemonCard = ({pokemon}:Props) => {
+
+    const {id, name} = pokemon;
+    const isFavorite = useAppSelector( state => !!state.pokemons[id]);
+    const dispatch = useAppDispatch()
+    const onToggle = () =>{
+        dispatch(toggleFavorite(pokemon))
+    }
+
   return (
 <div className="mx-auto right-0 mt-2 w-60">
                 <div className="flex flex-col bg-white rounded overflow-hidden shadow-lg">
@@ -31,28 +43,47 @@ export const PokemonCard = ({pokemon}:Props) => {
                     </div>
                     </div>
                     <div className="border-b">
-                        <Link href="/dashboard/main" className="px-4 py-2 hover:bg-gray-100 flex">
+                        <div onClick={onToggle}
+                        className="px-4 py-2 hover:bg-gray-100 flex cursor-pointer">
                         
                                 <div className="text-red-600">
-                                <svg
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    viewBox="0 0 24 24"
-                                    className="w-5 h-5"
-                                >
-                                    <path d="M12 21s-6.5-4.35-9.5-8.28C-0.46 9.23 1.06 5.5 4.5 4.5c2.04-.6 4.14.26 5.5 1.86 1.36-1.6 3.46-2.46 5.5-1.86 3.44 1 4.96 4.73 2 8.22C18.5 16.65 12 21 12 21z"/>
-                                </svg>
+                                    {
+                                        isFavorite
+                                        ?
+                                       <svg
+                                        viewBox="0 0 24 24"
+                                        fill="red"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="w-5 h-5"
+                                        >
+                                        <path d="M12.001 4.529c2.349-2.532 6.432-2.532 8.78 0 2.348 2.53 2.348 6.634 0 9.165L12 22 3.22 13.694c-2.348-2.53-2.348-6.634 0-9.165 2.348-2.532 6.431-2.532 8.78 0z"/>
+                                        </svg>
+   
+                                        :
+                                        <svg
+                                        viewBox="0 0 24 24"
+                                        fill="black"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="w-5 h-5"
+                                        >
+                                        <path d="M12.001 4.529c2.349-2.532 6.432-2.532 8.78 0 2.348 2.53 2.348 6.634 0 9.165L12 22 3.22 13.694c-2.348-2.53-2.348-6.634 0-9.165 2.348-2.532 6.431-2.532 8.78 0z"/>
+                                        </svg>                                   
+                                    }
+                               
 
                                 </div>
                                 <div className="pl-3">
                                 <p className="text-sm font-medium text-gray-800 leading-none">
-                                    No es favorito
+                                    {
+                                        isFavorite
+                                        ? 'Es Favorito'
+                                        : 'No es Favorito'
+                                    }
                                 </p>
+                                <p className="text-xs text-gray-500">Click para cambiar</p>
                                 </div>
                             
-                        </Link>
+                        </div>
 
                     </div>
                 </div>
