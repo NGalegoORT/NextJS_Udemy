@@ -1,7 +1,6 @@
 'use client'
 import { useAppDispatch, useAppSelector } from "@/store";
 import { addOne, initCounterState, substractOne } from "@/store/counter/counterSlice";
-import { init } from "next/dist/compiled/webpack/webpack";
 import { useEffect } from "react";
 
 interface Props {
